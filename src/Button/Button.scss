@@ -1,0 +1,15 @@
+.Button{
+    background: #4c4c4c;
+    font-weight: bold;
+    color: #FFF;
+    width: 125px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    &:hover{
+        background: rgba(76, 76, 76, .9);
+    }
+}

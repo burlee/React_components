@@ -1,0 +1,11 @@
+.BoxInformation{
+    margin: 25px;
+    width: 150px;
+    height: 250px;
+    border-radius: 1px;
+    border: 1px solid rgba(76, 76, 76, .2);
+    div{
+        height: 5px;
+        transition-duration: .5s;
+    }
+}

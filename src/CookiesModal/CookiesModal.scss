@@ -1,0 +1,27 @@
+.CookiesModal{
+    position: fixed;
+    top:0;
+    left: 0;
+    background: #ccc;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 999;
+    p{
+        font-size: 12px;
+        text-align: center;
+    }
+    button{
+        border: none;
+        outline: none;
+        background:none;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+}

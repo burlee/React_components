@@ -1,0 +1,39 @@
+@import '../MainSCSS/_config';
+
+.Test{
+    width: 100%;
+    height: 50%;
+    border-radius: 3px;
+    border: 1px solid none;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: $primary-color;
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
+
+    }
+    p{
+        font-size: 15px;
+        padding: 15px;
+        font-weight: bold;
+        text-align: justify;
+        text-align-last: center;
+        @include easeOut(); 
+        &:hover{
+            color: red;
+            transform: scale(1.1)
+        }
+    }
+    
+    @include Medium{
+        p{color: pink;}
+    }
+}

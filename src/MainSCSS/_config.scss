@@ -1,0 +1,32 @@
+$primary-color: #7e0505;
+$secondary-color: #F7F3F1;
+$three-color: #ffffff;
+$bg-opacity: 0.9;
+
+@mixin easeOut {
+    transition: all .4s ease-out;
+}
+
+@mixin Small {
+    @media screen and (max-width: 499px) {
+        @content;
+    }
+}
+
+@mixin Medium {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin Large {
+    @media screen and (min-width: 769px) and (max-width: 1169px) {
+        @content;
+    }
+}
+
+@mixin XL {
+    @media screen and (min-width: 1170px) {
+        @content;
+    }
+}

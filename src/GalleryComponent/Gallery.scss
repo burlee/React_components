@@ -1,0 +1,91 @@
+$button-color: #4CAF50;
+$background-color: #817a7a;
+
+.Gallery{
+    height: 50vh;
+    width: 100%;
+    border-bottom: 1px solid $background-color;
+    border-top: 1px solid $background-color;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: openmodal;
+    animation-duration: 2.1s;
+    background-color: rgba($background-color, 0.25);
+    button{
+        height: 80%;
+        width: 50px;
+        cursor: pointer;
+        background: $button-color;
+        color: white;
+        font-weight: bold;
+        border-radius: 3px;
+        border: none;
+    }
+    img{
+        width: 200px;
+        height: 140px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .ImageModal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: openmodal;
+        animation-duration: 1s;
+        header{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            button{
+                color: #FFF;
+                background: none;
+                outline: none;
+                border: none;
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+        img{
+            z-index: 2;
+            width: 50%;
+            height: auto;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .Gallery{
+        flex-direction: column;
+        height: auto;
+    }
+    .Gallery button{
+        height: 80%;
+        width: 200px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .Gallery img{
+        margin: 5px;
+    }
+}
+
+@keyframes openmodal{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
