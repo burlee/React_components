@@ -11,7 +11,7 @@ export default class CookiesModal extends Component {
             <Aux>
                 {this.state.showCookiesModal ? 
                 <div className={classes.CookiesModal}>
-                    <p>Informujemy, żedsadsa ta strona korzysta z plików cookies. Odwiedzając naszą stronę bez dokonania zmian ustawień swojej przeglądarki, wyrażasz zgodę na wykorzystanie przez nas plików cookies w celu ułatwienia korzystania z serwisu.</p>
+                    <p>Informujemy, że ta strona korzysta z plików cookies. Odwiedzając naszą stronę bez dokonania zmian ustawień swojej przeglądarki, wyrażasz zgodę na wykorzystanie przez nas plików cookies w celu ułatwienia korzystania z serwisu.</p>
                     <button onClick={() => this.setState({showCookiesModal: false})}>X</button>
                 </div>
                 : null }
