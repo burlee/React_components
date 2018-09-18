@@ -7,6 +7,7 @@ import BoxInformation from './BoxInformation/BoxInformation';
 import Footer from './Footer/Footer';
 import BoxWithShadow from './BoxWithShadow/BoxWithShadow';
 import CookiesModal from './CookiesModal/CookiesModal';
+import RegisterModal from './RegisterModal/RegisterModal';
 // import Test from './Test/Test';
 // import Gallery from './GalleryComponent/Gallery';
 
@@ -37,8 +38,8 @@ class App extends Component {
           images={[...images]}
         /> */}
         <Wrapper>
-          {/* <TopNavigation/>
-          <Button 
+          <TopNavigation/>
+          {/* <Button 
             onClick={this.clicked}
             buttonBgColor="red"
             buttonFontColor="#FFF"
@@ -46,17 +47,15 @@ class App extends Component {
           <Button 
             onClick={this.clicked}
             textValue="Zobacz więcej"/>
-          <Button textValue="Hej :-)" buttonBgColor='orange'/>
-        <BoxInformation/> */}
-        <CookiesModal/>
-        <BoxWithShadow/>
+          <Button textValue="Hej :-)" buttonBgColor='orange'/> */}
+          <RegisterModal/>
         </Wrapper>
         {/* {this.state.closeModal ?
         <InformationModal
           closeModal={this.closeModal}
           informationValue="Niestety nie dodano produktu"
         /> : null } */}
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
