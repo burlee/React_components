@@ -1,0 +1,38 @@
+$first-color: #4bebc7;
+$second-color: #49cbd9;
+
+.Timeline{
+    div{
+        position: relative;
+        max-width: 400px;
+        height: 250px;
+        background-image: linear-gradient(to bottom right, #4bebc7, #49cbd9);
+        border-left: 6px solid #656565;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+        box-sizing: border-box;
+        box-shadow: 0px 15px 15px #656565;
+        h1{
+            font-weight: 500;
+            font-size: 24px;
+            color: #656565;
+        }
+        p{
+            font-size: 12px;
+            color: #656565;
+        }
+        &::after{
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #FFF;
+            position: absolute;
+            top: 30%;
+            left: -15px;
+            border: 2px solid #656565;
+        }
+    }
+}

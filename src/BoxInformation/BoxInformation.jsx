@@ -8,7 +8,7 @@ export default class BoxInformation extends Component {
     }
 
     animationStart = () => {
-        this.setState({animationColor: 'red'});
+        this.setState({animationColor: '#FFF'});
         for(let i=0; i<101; i++){
             this.setState({width: i})
         }
@@ -21,7 +21,9 @@ export default class BoxInformation extends Component {
     render() {
         return (
             <div onMouseEnter={this.animationStart} onMouseLeave={this.animationEnd} className={classes.BoxInformation}>
-                <div style={{background: this.state.animationColor, width: this.state.width + '%'}}></div>
+                <div style={{background: this.state.animationColor, width: this.state.width + '%'}}>
+                    <div className={classes.Circle}></div>
+                </div>
                 <h1>Example</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit error cumque molestias commodi laboriosam expedita alias earum dolor excepturi sit nisi eius similique, nihil corrupti.</p>
             </div>

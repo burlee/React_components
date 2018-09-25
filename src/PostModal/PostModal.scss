@@ -1,0 +1,60 @@
+$first-color: #4bebc7;
+$second-color: #49cbd9;
+
+.PostModal{
+    width: 600px;
+    height: 200px;
+    box-shadow: 0px 0px 15px #4c4c4c;
+    border-radius: 6px;
+    display: flex;
+
+    .PostButton{
+        background-image: linear-gradient(to bottom right, $first-color, $second-color);
+        height: 100%;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 3px solid rgba(76, 76, 76, .75);
+        cursor: pointer;
+        i{
+            font-size: 40px;
+            color: #FFF;
+        }
+    }
+    .PostInformation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 83%;
+        box-sizing: border-box;
+        h1{
+            color: #4c4c4c;
+            font-weight: 500;
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        .SocialContainer{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            animation: opacity;
+            animation-duration: .75s;
+            border-top: 1px solid rgba(76, 76, 76, .25);
+            padding: 10px;
+            box-sizing: border-box;
+            background: transparent;
+            border-bottom-right-radius: 6px;
+        }
+    }
+}
+
+
+@keyframes opacity { 
+    from { 
+        opacity: 0;
+    } to { 
+        opacity: 1;
+    }
+}

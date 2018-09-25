@@ -8,6 +8,17 @@ import Footer from './Footer/Footer';
 import BoxWithShadow from './BoxWithShadow/BoxWithShadow';
 import CookiesModal from './CookiesModal/CookiesModal';
 import RegisterModal from './RegisterModal/RegisterModal';
+import SelectBox from './SelectBox/SelectBox'
+import FileUpload from './FileUpload/FileUpload';
+import SuccessModal from './SuccessModal/SuccessModal';
+import SwitchOnOff from './SwitchOnOff/SwitchOnOff';
+import LeftNavigation from './LeftNavigation/LeftNavigation';
+import Search from './Search/Search';
+import FAQ from './FAQ/FAQ';
+import WarningModal from './WarningModal/WarningModal';
+import Timeline from './Timeline/Timeline';
+import PostModal from './PostModal/PostModal'
+import CssGrid from './CssGrid/CssGrid'
 // import Test from './Test/Test';
 // import Gallery from './GalleryComponent/Gallery';
 
@@ -25,11 +36,20 @@ const images = [
 ]
 class App extends Component {
   state ={
-    closeModal: true
+    closeModal: true,
+    switchIsTrue: false,
+    flexOption: 'flex-start'
   }
   closeModal = () => {
     this.setState({closeModal: false})
   }
+
+  
+  switchOnOffFn = () => {
+    this.setState({switchIsTrue: !this.state.switchIsTrue, flexOption: 'flex-end'})
+    if(this.state.flexOption === 'flex-end'){this.setState({flexOption: 'flex-start'})}
+  }
+
   render() {
     return (
       <div>
@@ -38,18 +58,26 @@ class App extends Component {
           images={[...images]}
         /> */}
         <Wrapper>
-          <TopNavigation/>
-          {/* <Button 
-            onClick={this.clicked}
-            buttonBgColor="red"
-            buttonFontColor="#FFF"
-            textValue="Kliknij"/>
-          <Button 
-            onClick={this.clicked}
-            textValue="Zobacz więcej"/>
-          <Button textValue="Hej :-)" buttonBgColor='orange'/> */}
-          <RegisterModal/>
+          {/* <SelectBox/> */}
+          <h1>Metody płatności</h1>
+          {/* <BoxWithShadow
+            icon="fas fa-credit-card"
+            method="Karta kredytowa"
+            spanValue="xxxx xxxx xxxx 1234"
+          />
+          <BoxWithShadow
+            icon="fab fa-btc"
+            method="Kryptowaluty"
+            spanValue="LXADbgDqkThCD6BUJ"
+          /> */}
+          {/* <BoxWithShadow
+            icon="fas fa-mobile-alt"
+            method="Płatność SMS"
+            spanValue="507 060 000"
+          />  */}
+          <CssGrid/>
         </Wrapper>
+        
         {/* {this.state.closeModal ?
         <InformationModal
           closeModal={this.closeModal}

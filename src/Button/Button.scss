@@ -1,15 +1,12 @@
 .Button{
-    background: #4c4c4c;
+    background-image: linear-gradient(to bottom right, #4bebc7, #49cbd9);
     font-weight: bold;
     color: #FFF;
-    width: 125px;
+    width: 100px;
     height: 40px;
+    border-radius: 20px;
     border: none;
     outline: none;
-    border-radius: 3px;
+    font-size: 12px;
     cursor: pointer;
-    transition: all .25s ease-in-out;
-    &:hover{
-        background: rgba(76, 76, 76, .9);
-    }
 }

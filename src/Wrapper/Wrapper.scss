@@ -1,7 +1,10 @@
 .Wrapper{
     width: 100%;
     height: auto;
-    border: 1px solid gray;
     box-sizing: border-box;
-    padding-top: 100px;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

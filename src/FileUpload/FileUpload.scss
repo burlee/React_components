@@ -1,0 +1,22 @@
+.FileUpload{
+    width: 400px;
+    height: 250px;
+    border: 1px solid #593c8f;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    input{
+        height: 25px;
+    }
+    button{
+        font-size: 12px;
+        padding: 10px;
+        height: 40px;
+        background: #593c8f;
+        border-radius: 20px;
+        border: none;
+        color: #FFF;
+        cursor: pointer;
+        outline: none;
+    }
+}
