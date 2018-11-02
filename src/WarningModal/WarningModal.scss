@@ -20,11 +20,15 @@
         height: 35px;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
-        span{
+        button{
             font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
             color: rgba(76, 76, 76, .75);
+            cursor: pointer;
+            background: none;
+            outline: none;
+            border: none;
         }
     }
     .WarningModal{

@@ -1,0 +1,39 @@
+.OpinionModal{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #4c4c4c;
+    display: flex;
+    flex-direction: column;
+    background: rgb(8, 140, 163);
+    div{
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            text-align: center;
+        }
+    }
+    .OpinionButtonBox{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        button{
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgb(173, 247, 173);
+            border: none;
+            cursor: pointer;
+            transition: .2s all ease-in-out;
+            outline: none;
+            margin-right: 8px;
+            &:hover{
+                background: #4c4c4c;
+            }
+        }
+    }
+}

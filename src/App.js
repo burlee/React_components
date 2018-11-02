@@ -19,26 +19,32 @@ import WarningModal from './WarningModal/WarningModal';
 import Timeline from './Timeline/Timeline';
 import PostModal from './PostModal/PostModal'
 import CssGrid from './CssGrid/CssGrid'
+import MyProvider from './MyProvider/MyProvider';
+import MyContext from './MyProvider/config';
+import axios from 'axios'
+import Chat from './Chat/Chat';
+import OpinionModal from './OpinionModal/OpinionModal';
 // import Test from './Test/Test';
-// import Gallery from './GalleryComponent/Gallery';
+import Gallery from './GalleryComponent/Gallery';
+
+
 
 const images = [
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ciasto-biszkoptowe.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/smazony-ryz-z-groszkiem.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ryz-z-warzywami.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ryz-z-warzywami.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ryz-z-warzywami.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ciasto-biszkoptowe.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/smazony-ryz-z-groszkiem.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ryz-z-warzywami.jpg',
-  'https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/ryz-z-warzywami.jpg',
-  'https://data.whicdn.com/images/275259620/superthumb.jpg?t=1485045406'
+  'https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m228238-0042.png',
+  'https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m50535-0002.png',
+  'https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m116680-0002.png'
 ]
+
+
+
+
 class App extends Component {
   state ={
     closeModal: true,
     switchIsTrue: false,
-    flexOption: 'flex-start'
+    flexOption: 'flex-start',
+    name: 'Maciej',
+    surname: 'Abramowicz'
   }
   closeModal = () => {
     this.setState({closeModal: false})
@@ -50,34 +56,58 @@ class App extends Component {
     if(this.state.flexOption === 'flex-end'){this.setState({flexOption: 'flex-start'})}
   }
 
+  changeIsLogin = async (dispatch) => {
+
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+
+    dispatch({
+      type: 'FETCH_POSTS',
+      payload: response.data.slice(0,20)
+    })
+            
+  }
+
   render() {
     return (
+
       <div>
         {/* <Test/> */}
-        {/* <Gallery
+        <Gallery
           images={[...images]}
-        /> */}
-        <Wrapper>
-          {/* <SelectBox/> */}
-          <h1>Metody płatności</h1>
-          {/* <BoxWithShadow
-            icon="fas fa-credit-card"
-            method="Karta kredytowa"
-            spanValue="xxxx xxxx xxxx 1234"
-          />
-          <BoxWithShadow
-            icon="fab fa-btc"
-            method="Kryptowaluty"
-            spanValue="LXADbgDqkThCD6BUJ"
-          /> */}
-          {/* <BoxWithShadow
-            icon="fas fa-mobile-alt"
-            method="Płatność SMS"
-            spanValue="507 060 000"
-          />  */}
-          <CssGrid/>
-        </Wrapper>
-        
+        />
+        <MyProvider>
+          <MyContext.Consumer>
+            
+              {state => (
+                <Wrapper>
+                  {console.log(state.state)}
+                  {/* <SelectBox/> */}
+                  <h1>Metody płatności {state.state.name}</h1>
+                  {/* <BoxWithShadow
+                    icon="fas fa-credit-card"
+                    method="Karta kredytowa"
+                    spanValue="xxxx xxxx xxxx 1234"
+                  />
+                  <BoxWithShadow
+                    icon="fab fa-btc"
+                    method="Kryptowaluty"
+                    spanValue="LXADbgDqkThCD6BUJ"
+                  /> */}
+                  {/* <BoxWithShadow
+                    icon="fas fa-mobile-alt"
+                    method="Płatność SMS"
+                    spanValue="507 060 000"
+                  />  */}
+                  <CssGrid/>
+                  <button onClick={() => this.changeIsLogin(state.state.dispatch)}>Kliknij</button>
+                  <button onClick={() => state.fetchUserData(this.state.name, this.state.surname)}></button>
+                  <input type="text" name="surnameee" onChange={event => this.setState({name: event.target.value})}/>
+                  <OpinionModal/>
+                </Wrapper>
+              )}
+          </MyContext.Consumer>
+              <RegisterModal/>
+        </MyProvider>        
         {/* {this.state.closeModal ?
         <InformationModal
           closeModal={this.closeModal}

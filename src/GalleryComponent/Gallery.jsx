@@ -13,7 +13,9 @@ export default class Gallery extends Component {
     disabledPreviousBtn: true,
     disabledNextBtn: false,
     currentImageSource: '',
-    showImageModal: false
+    showImageModal: false,
+    width: 50,
+    rotate: 0
   }
 
   previousImage = () => {
@@ -57,6 +59,16 @@ export default class Gallery extends Component {
 
   stopPropagation = (e) => e.stopPropagation();
 
+  largeImage = () => {
+    if(this.state.width >= 50) return;
+    this.setState({width: this.state.width + 2})
+  }
+
+  decreaseImage = () => {
+    if(this.state.width <= 20) return;
+    this.setState({width: this.state.width - 2})
+  }
+
   render() {
     const images = this.props.images.slice(this.state.start, this.state.end).map( (imageSource, index) => {
       return (<img
@@ -66,6 +78,16 @@ export default class Gallery extends Component {
         key={index}
         />)
     })
+
+    const imageForOpenModal = this.props.images.map( (imageSource, index) => {
+      return <img 
+        onClick={() => this.imageSourceHandler(imageSource)}
+        src={imageSource} 
+        alt={images} 
+        key={index}
+      />
+    })
+
     return (
       <div className={classes.Gallery}>
         <button disabled={this.state.disabledPreviousBtn} onClick={this.previousImage}>&lt;</button>
@@ -73,10 +95,22 @@ export default class Gallery extends Component {
         <button disabled={this.state.disabledNextBtn} onClick={this.nextImage}>&gt;</button>
         {this.state.showImageModal ? 
           <div className={classes.ImageModal} onClick={this.closeImageModal}>
-            <header>
+            <header onClick={this.stopPropagation}>
+              <div>
+                {imageForOpenModal}
+              </div>
               <button onClick={this.closeImageModal}>X</button>
             </header>
-            <img src={this.state.currentImageSource} alt="Modal image" onClick={this.stopPropagation} />
+            <img src={this.state.currentImageSource} 
+              alt="Modal image" 
+              onClick={this.stopPropagation} 
+              style={{maxWidth: this.state.width+'%', transform: `rotate(${this.state.rotate}deg)`}}
+            />
+            <div className={classes.ImageOptions} onClick={this.stopPropagation}>
+              <button onClick={this.largeImage}>Powiększ</button>
+              <button onClick={this.decreaseImage}>Pomniejsz</button>
+              <button onClick={()=> this.setState({rotate: this.state.rotate + 90})}>Obroć</button>
+            </div>
           </div> : null
         }
       </div>

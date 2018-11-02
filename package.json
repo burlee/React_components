@@ -5,6 +5,7 @@
   "dependencies": {
     "apollo-boost": "^0.1.16",
     "autoprefixer": "7.1.6",
+    "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -42,6 +43,7 @@
     "react-apollo": "^2.1.11",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.4.2",
+    "react-infinite-scroller": "^1.2.1",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.5.1",
     "resolve": "1.6.0",
